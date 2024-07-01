@@ -1,5 +1,5 @@
-1. Download CSharpMonoBehaviourScriptAssetsModProcessor.cs.
-2. Putting CSharpMonoBehaviourScriptAssetsModProcessor.cs to your unity project Editor folder.
+1. Download `CSharpMonoBehaviourScriptAssetsModProcessor.cs`.
+2. Putting `CSharpMonoBehaviourScriptAssetsModProcessor.cs` to your unity project `Editor` folder.
 3. Modify `CSharpMonoBehaviourScriptMod` functions to you want.
 
 ```csharp

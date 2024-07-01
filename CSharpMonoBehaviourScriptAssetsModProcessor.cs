@@ -48,10 +48,6 @@ public class CSharpMonoBehaviourScriptAssetsModProcessor : UnityEditor.AssetModi
 
 public class MonoBehaviourScriptAssetsPostProcessor : AssetPostprocessor
 {
-    private static Regex _s_pCSharpFileHeaderComment =
-        new Regex(
-            @"/\*\s*\* author\s*:\s*.*\s*\*\s*datetime\s*:\s*.*\s*\*\sdescription\s*:\s*\[description]\s*\s*\*\s*\*/",
-            RegexOptions.Compiled);
     private void OnPreprocessAsset()
     {
         if (CSharpMonoBehaviourScriptAssetsModProcessor.InWillCreate(assetPath))
@@ -68,8 +64,7 @@ public class MonoBehaviourScriptAssetsPostProcessor : AssetPostprocessor
         try
         {
             var t_strContent = System.IO.File.ReadAllText(t_strAssetName);
-            var match = _s_pCSharpFileHeaderComment.Match(t_strContent);
-            if (!match.Success)
+            if (!t_strContent.StartsWith("/*"))
             {
                 var t_strHeaderSB = new StringBuilder();
                 t_strHeaderSB.AppendLine(@"/*

@@ -32,7 +32,8 @@
     }
 ```
 
-U can custom place-holder to you want, like this:
+U can custom place-holder to you want:
+Now i what to add a `"PROJECTNAME"` place-hodler like this:
 ```csharp
             if (!match.Success)
             {
